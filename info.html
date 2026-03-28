@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIDAS - Help & Information</title>
+    <link rel="stylesheet" href="info.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-bg text-fg font-body">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass transition-transform duration-500 ease-out">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+            <a href="index.html" class="font-display text-3xl tracking-[0.2em] relative z-10">ADIDAS</a>
+            
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="category.html#men" class="nav-link text-xs uppercase tracking-[0.2em] text-muted hover:text-fg transition-colors">Men</a>
+                <a href="category.html#women" class="nav-link text-xs uppercase tracking-[0.2em] text-muted hover:text-fg transition-colors">Women</a>
+                <a href="category.html#kids" class="nav-link text-xs uppercase tracking-[0.2em] text-muted hover:text-fg transition-colors">Kids</a>
+                <a href="category.html#sports" class="nav-link text-xs uppercase tracking-[0.2em] text-muted hover:text-fg transition-colors">Sports</a>
+                <a href="category.html#brands" class="nav-link text-xs uppercase tracking-[0.2em] text-muted hover:text-fg transition-colors">Brands</a>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button class="p-3 hover:bg-white/5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white/20" aria-label="Search">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+                <button class="p-3 hover:bg-white/5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white/20" aria-label="Account">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                </button>
+                <button class="p-3 hover:bg-white/5 rounded-full transition-colors relative focus:outline-none focus:ring-2 focus:ring-white/20" aria-label="Cart">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                    </svg>
+                    <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-fg text-bg text-[10px] font-bold rounded-full flex items-center justify-center">3</span>
+                </button>
+                <button id="menuBtn" class="lg:hidden p-3 hover:bg-white/5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white/20" aria-label="Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-bg/98 backdrop-blur-2xl translate-x-full transition-transform duration-700 ease-out lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+            <a href="category.html#men" class="mobile-link font-display text-5xl tracking-wider opacity-0 translate-y-8">Men</a>
+            <a href="category.html#women" class="mobile-link font-display text-5xl tracking-wider opacity-0 translate-y-8">Women</a>
+            <a href="category.html#kids" class="mobile-link font-display text-5xl tracking-wider opacity-0 translate-y-8">Kids</a>
+            <a href="category.html#sports" class="mobile-link font-display text-5xl tracking-wider opacity-0 translate-y-8">Sports</a>
+            <a href="category.html#brands" class="mobile-link font-display text-5xl tracking-wider opacity-0 translate-y-8">Brands</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden grid-pattern diagonal-lines pt-28">
+        <div class="absolute top-40 left-8 lg:left-20 w-24 h-24 lg:w-40 lg:h-40 border border-white/5 rounded-full"></div>
+        <div class="absolute bottom-20 right-8 lg:right-32 w-40 h-40 lg:w-56 lg:h-56 border border-white/5 rounded-full"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
+            <div class="hero-tag opacity-0 mb-6">
+                <span class="inline-block px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-muted border border-white/10">
+                    Support & Information
+                </span>
+            </div>
+            
+            <h1 class="font-display text-[clamp(3rem,10vw,7rem)] leading-[0.9] mb-6">
+                <span class="hero-word block overflow-hidden">
+                    <span class="inline-block hero-text">HELP CENTER</span>
+                </span>
+            </h1>
+            
+            <p class="hero-desc text-muted text-base lg:text-lg max-w-xl mx-auto leading-relaxed opacity-0">
+                Find answers to your questions, learn about our policies, and discover our commitment to a better future.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Main Content with Sidebar -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-16">
+                
+                <!-- Sidebar Navigation -->
+                <aside class="hidden lg:block">
+                    <div class="sticky top-32">
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-6">Navigation</p>
+                        <nav class="space-y-1">
+                            <a href="#help" class="sidebar-link active">Help & FAQ</a>
+                            <a href="#shipping" class="sidebar-link">Shipping</a>
+                            <a href="#returns" class="sidebar-link">Returns</a>
+                            <a href="#size-guide" class="sidebar-link">Size Guide</a>
+                            <a href="#careers" class="sidebar-link">Careers</a>
+                            <a href="#press" class="sidebar-link">Press</a>
+                            <a href="#sustainability" class="sidebar-link">Sustainability</a>
+                        </nav>
+                    </div>
+                </aside>
+                
+                <!-- Main Content Area -->
+                <main>
+                    
+                    <!-- Help Section -->
+                    <div id="help" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="help-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">01 / Help</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">FREQUENTLY ASKED QUESTIONS</h2>
+                            
+                            <!-- Accordion -->
+                            <div class="border-t border-white/10">
+                                <div class="accordion-item active">
+                                    <button class="accordion-header">
+                                        <span>How do I track my order?</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="pb-6 text-muted leading-relaxed">
+                                            Once your order ships, you'll receive a confirmation email with a tracking number and link. You can also log into your account and view the status in "Order History". Tracking information typically updates within 24-48 hours of shipment.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span>Where is my order?</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="pb-6 text-muted leading-relaxed">
+                                            Standard delivery takes 3-5 business days. Express delivery takes 1-2 business days. If your order is delayed, please check your email for updates or contact our customer service team with your order number.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span>How do I cancel or change my order?</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="pb-6 text-muted leading-relaxed">
+                                            You can cancel or modify your order within 30 minutes of placing it. Go to your order confirmation email and click "Modify Order," or contact customer service immediately. Once an order begins processing, changes cannot be made.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span>What payment methods do you accept?</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="pb-6 text-muted leading-relaxed">
+                                            We accept Visa, MasterCard, American Express, Discover, PayPal, Apple Pay, Google Pay, and Adidas Gift Cards. All payments are processed securely and your information is encrypted.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span>Do you offer price adjustments?</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="pb-6 text-muted leading-relaxed">
+                                            Yes, we offer a one-time price adjustment within 14 days of purchase if an item goes on sale. Contact customer service with your order number and we'll refund the difference to your original payment method.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-10 glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div>
+                                    <h3 class="font-display text-xl mb-2">Still need help?</h3>
+                                    <p class="text-muted text-sm">Our team is available 24/7 to assist you.</p>
+                                </div>
+                                <button class="magnetic-btn">
+                                    <span>Contact Support</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Shipping Section -->
+                    <div id="shipping" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="shipping-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">02 / Shipping</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">SHIPPING INFORMATION</h2>
+                            
+                            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                                <div class="glass-card rounded-xl p-6 text-center">
+                                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-display text-lg mb-2">STANDARD</h3>
+                                    <p class="text-muted text-sm mb-2">5-7 Business Days</p>
+                                    <p class="text-fg font-semibold">FREE</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center">
+                                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-display text-lg mb-2">EXPRESS</h3>
+                                    <p class="text-muted text-sm mb-2">2-3 Business Days</p>
+                                    <p class="text-fg font-semibold">$12.99</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6 text-center">
+                                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-display text-lg mb-2">NEXT DAY</h3>
+                                    <p class="text-muted text-sm mb-2">1 Business Day</p>
+                                    <p class="text-fg font-semibold">$24.99</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <p class="text-muted leading-relaxed">
+                                    <strong class="text-fg">Processing Time:</strong> Orders are processed Monday through Friday, excluding holidays. Orders placed after 1 PM EST will begin processing the next business day.
+                                </p>
+                                <p class="text-muted leading-relaxed">
+                                    <strong class="text-fg">International Shipping:</strong> We ship to over 100 countries. International shipping rates and delivery times vary by location. Import duties and taxes may apply.
+                                </p>
+                                <p class="text-muted leading-relaxed">
+                                    <strong class="text-fg">PO Boxes:</strong> We do not ship to PO Boxes or APO/FPO addresses for orders containing restricted items.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Returns Section -->
+                    <div id="returns" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="returns-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">03 / Returns</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">RETURNS & EXCHANGES</h2>
+                            
+                            <div class="glass-card rounded-xl p-8 mb-8">
+                                <h3 class="font-display text-2xl mb-4">30-DAY RETURN POLICY</h3>
+                                <p class="text-muted leading-relaxed mb-6">
+                                    We want you to be completely satisfied with your purchase. If you're not happy, you can return your item within 30 days of delivery for a full refund. Items must be unworn, unwashed, and in original packaging with all tags attached.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="text-sm uppercase tracking-wider mb-2 text-fg">How to Return</h4>
+                                        <ol class="text-muted text-sm space-y-2 list-decimal list-inside">
+                                            <li>Log into your account</li>
+                                            <li>Go to Order History</li>
+                                            <li>Select items to return</li>
+                                            <li>Print prepaid shipping label</li>
+                                            <li>Drop off at any carrier location</li>
+                                        </ol>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm uppercase tracking-wider mb-2 text-fg">Refund Timeline</h4>
+                                        <ul class="text-muted text-sm space-y-2">
+                                            <li><strong class="text-fg">Processing:</strong> 3-5 business days</li>
+                                            <li><strong class="text-fg">Refund:</strong> 5-10 business days to original payment</li>
+                                            <li><strong class="text-fg">Confirmation:</strong> Email notification sent</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <button class="magnetic-btn">
+                                    <span>Start a Return</span>
+                                </button>
+                                <button class="magnetic-btn outline">
+                                    <span>Check Return Status</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Size Guide Section -->
+                    <div id="size-guide" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="size-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">04 / Size Guide</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">FIND YOUR FIT</h2>
+                            
+                            <p class="text-muted leading-relaxed mb-8 max-w-2xl">
+                                Use our comprehensive size guide to find the perfect fit. Measure your foot length and match it to the chart below for accurate sizing.
+                            </p>
+                            
+                            <div class="overflow-x-auto rounded-xl border border-white/10 mb-8">
+                                <table class="size-table">
+                                    <thead>
+                                        <tr>
+                                            <th>US - Men</th>
+                                            <th>US - Women</th>
+                                            <th>UK</th>
+                                            <th>EU</th>
+                                            <th>CM</th>
+                                            <th>Inches</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>6</td>
+                                            <td>40</td>
+                                            <td>25</td>
+                                            <td>9.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>7</td>
+                                            <td>41</td>
+                                            <td>26</td>
+                                            <td>10.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>8</td>
+                                            <td>42</td>
+                                            <td>27</td>
+                                            <td>10.6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>9</td>
+                                            <td>43</td>
+                                            <td>28</td>
+                                            <td>11.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>12</td>
+                                            <td>10</td>
+                                            <td>44</td>
+                                            <td>29</td>
+                                            <td>11.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>13</td>
+                                            <td>11</td>
+                                            <td>45</td>
+                                            <td>30</td>
+                                            <td>11.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td>12</td>
+                                            <td>46</td>
+                                            <td>31</td>
+                                            <td>12.2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="glass-card rounded-xl p-6">
+                                <h4 class="font-display text-lg mb-3">MEASURING TIPS</h4>
+                                <ul class="text-muted text-sm space-y-2">
+                                    <li>- Measure in the afternoon when feet are at their largest</li>
+                                    <li>- Wear the socks you plan to use with the shoes</li>
+                                    <li>- Stand on a flat surface with your weight evenly distributed</li>
+                                    <li>- If between sizes, size up for athletic footwear</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Careers Section -->
+                    <div id="careers" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="careers-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">05 / Careers</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">JOIN OUR TEAM</h2>
+                            
+                            <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                                <div>
+                                    <p class="text-muted leading-relaxed mb-6">
+                                        At Adidas, we're more than a sportswear company. We're a team of creators, innovators, and athletes united by a passion to change the game. We believe in empowering our people to push boundaries and achieve the impossible.
+                                    </p>
+                                    <p class="text-muted leading-relaxed mb-8">
+                                        With locations in over 160 countries, we offer opportunities in design, technology, marketing, retail, and more. Discover your potential and help us shape the future of sport.
+                                    </p>
+                                    <button class="magnetic-btn">
+                                        <span>View Open Positions</span>
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="glass-card rounded-xl p-6 text-center">
+                                        <p class="font-display text-4xl mb-2">60K+</p>
+                                        <p class="text-muted text-sm">Employees Worldwide</p>
+                                    </div>
+                                    <div class="glass-card rounded-xl p-6 text-center">
+                                        <p class="font-display text-4xl mb-2">160+</p>
+                                        <p class="text-muted text-sm">Countries</p>
+                                    </div>
+                                    <div class="glass-card rounded-xl p-6 text-center">
+                                        <p class="font-display text-4xl mb-2">#1</p>
+                                        <p class="text-muted text-sm">Best Workplace 2024</p>
+                                    </div>
+                                    <div class="glass-card rounded-xl p-6 text-center">
+                                        <p class="font-display text-4xl mb-2">500+</p>
+                                        <p class="text-muted text-sm">Open Positions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Press Section -->
+                    <div id="press" class="mb-20 scroll-mt-32">
+                        <div class="opacity-0" id="press-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">06 / Press</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">PRESS & MEDIA</h2>
+                            
+                            <div class="glass-card rounded-xl p-8 mb-8">
+                                <h3 class="font-display text-xl mb-4">Media Inquiries</h3>
+                                <p class="text-muted leading-relaxed mb-6">
+                                    For press and media inquiries, please contact our communications team. We're happy to provide high-resolution assets, arrange interviews, and assist with coverage.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <p class="text-sm uppercase tracking-wider text-muted mb-2">Press Contact</p>
+                                        <p class="text-fg">press@adidas.com</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm uppercase tracking-wider text-muted mb-2">Media Assets</p>
+                                        <a href="#" class="text-fg hover:text-muted transition-colors">Download Press Kit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 class="font-display text-xl mb-6">Latest News</h3>
+                            <div class="space-y-4">
+                                <a href="#" class="block glass-card rounded-xl p-6 hover:bg-white/[0.05] transition-colors">
+                                    <p class="text-[10px] text-muted uppercase tracking-wider mb-2">December 15, 2024</p>
+                                    <h4 class="font-semibold mb-2">Adidas Unveils Revolutionary 4D Midsole Technology</h4>
+                                    <p class="text-muted text-sm">Next-generation cushioning system sets new standard in athletic footwear...</p>
+                                </a>
+                                <a href="#" class="block glass-card rounded-xl p-6 hover:bg-white/[0.05] transition-colors">
+                                    <p class="text-[10px] text-muted uppercase tracking-wider mb-2">December 10, 2024</p>
+                                    <h4 class="font-semibold mb-2">Partnership Announcement: Adidas x Major League Soccer</h4>
+                                    <p class="text-muted text-sm">New multi-year partnership brings innovation to professional soccer...</p>
+                                </a>
+                                <a href="#" class="block glass-card rounded-xl p-6 hover:bg-white/[0.05] transition-colors">
+                                    <p class="text-[10px] text-muted uppercase tracking-wider mb-2">November 28, 2024</p>
+                                    <h4 class="font-semibold mb-2">Sustainability Report: Carbon Neutral by 2025</h4>
+                                    <p class="text-muted text-sm">On track to achieve carbon neutrality across all operations...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-divider mb-20"></div>
+                    
+                    <!-- Sustainability Section -->
+                    <div id="sustainability" class="scroll-mt-32">
+                        <div class="opacity-0" id="sustain-anim">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-4">07 / Sustainability</p>
+                            <h2 class="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-8">OUR COMMITMENT</h2>
+                            
+                            <div class="relative rounded-xl overflow-hidden mb-12">
+                                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1200&q=80" alt="Sustainability" class="w-full h-64 md:h-96 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-8">
+                                    <h3 class="font-display text-2xl lg:text-3xl mb-2">END PLASTIC WASTE</h3>
+                                    <p class="text-muted">Our mission to create a more sustainable future through innovation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                                <div class="glass-card rounded-xl p-6">
+                                    <div class="w-12 h-12 mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-display text-lg mb-2">RECYCLED MATERIALS</h4>
+                                    <p class="text-muted text-sm">Over 50% of our products contain recycled polyester. By 2025, we aim for 100%.</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6">
+                                    <div class="w-12 h-12 mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-display text-lg mb-2">CARBON NEUTRAL</h4>
+                                    <p class="text-muted text-sm">Committed to carbon neutrality across all operations by 2025.</p>
+                                </div>
+                                
+                                <div class="glass-card rounded-xl p-6">
+                                    <div class="w-12 h-12 mb-4 flex items-center justify-center border border-white/10 rounded-full">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-display text-lg mb-2">WATER SAVINGS</h4>
+                                    <p class="text-muted text-sm">New dyeing technology reduces water usage by up to 95%.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card rounded-xl p-8">
+                                <h3 class="font-display text-xl mb-4">Our Three Pillars</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-4">
+                                        <span class="text-fg font-display text-lg">01</span>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Circularity</h4>
+                                            <p class="text-muted text-sm">Designing products that can be fully recycled or repurposed at end of life.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="text-fg font-display text-lg">02</span>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Climate Action</h4>
+                                            <p class="text-muted text-sm">Reducing our carbon footprint through renewable energy and sustainable practices.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="text-fg font-display text-lg">03</span>
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Fair Play</h4>
+                                            <p class="text-muted text-sm">Ensuring fair wages, safe working conditions, and human rights throughout our supply chain.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 pt-6 border-t border-white/10">
+                                    <button class="magnetic-btn">
+                                        <span>Read Full Report</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </main>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 lg:py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-16">
+                <div>
+                    <h4 class="font-display text-lg mb-6">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="category.html#men" class="text-muted hover:text-fg transition-colors text-sm">Shoes</a></li>
+                        <li><a href="category.html#women" class="text-muted hover:text-fg transition-colors text-sm">Clothing</a></li>
+                        <li><a href="category.html#kids" class="text-muted hover:text-fg transition-colors text-sm">Accessories</a></li>
+                        <li><a href="#" class="text-muted hover:text-fg transition-colors text-sm">New Arrivals</a></li>
+                        <li><a href="#" class="text-muted hover:text-fg transition-colors text-sm">Sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#help" class="text-muted hover:text-fg transition-colors text-sm">Help</a></li>
+                        <li><a href="#shipping" class="text-muted hover:text-fg transition-colors text-sm">Shipping</a></li>
+                        <li><a href="#returns" class="text-muted hover:text-fg transition-colors text-sm">Returns</a></li>
+                        <li><a href="#size-guide" class="text-muted hover:text-fg transition-colors text-sm">Size Guide</a></li>
+                        <li><a href="#" class="text-muted hover:text-fg transition-colors text-sm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#careers" class="text-muted hover:text-fg transition-colors text-sm">Careers</a></li>
+                        <li><a href="#press" class="text-muted hover:text-fg transition-colors text-sm">Press</a></li>
+                        <li><a href="#sustainability" class="text-muted hover:text-fg transition-colors text-sm">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg mb-6">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-colors" aria-label="Twitter">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-colors" aria-label="YouTube">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5 gap-6">
+                <a href="index.html" class="font-display text-2xl tracking-[0.2em]">ADIDAS</a>
+                <p class="text-muted text-xs">2024 Adidas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tailwind.config.js"></script>
+    <script src="info.js"></script>
+</body>
+</html>
