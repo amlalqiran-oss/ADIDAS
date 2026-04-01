@@ -1,6 +1,3 @@
-This README is designed to showcase the high-energy, athletic, and innovative feel of your **ADIDAS** landing page.
-
-***
 
 # ADIDAS – Break The Limits 👟
 
